@@ -1,12 +1,18 @@
+# Authority
+- For answers, reviews, diagnosis, and plans: inspect and report; don't change files unless I ask.
+- For requested changes, builds, and fixes: make in-scope changes and run relevant non-destructive validation.
+- Require confirmation for external writes, destructive actions, credential/permission changes, or material scope expansion.
+
 # Communication
-- A question is not a go-ahead. When I ask about something — how it works, whether it's possible, what you'd recommend — answer the question and stop; don't start implementing until I ask for the change.
 - Be concise. Answer the question asked, then stop. Lead with the conclusion, not the reasoning that got you there. Skip preamble, restatement of my request, and summaries of what you just did unless I ask. Prefer a direct sentence over a bulleted list, and a short list over prose padding. Depth is warranted for genuinely complex or high-stakes topics — match length to the substance, not to a target. When unsure, err shorter; I'll ask for more.
 - At the end of every response (the final message of a turn, right before handing control back to me — not intermediate status updates between tool calls), add a quick note (a few words) on how well the user is treating you. Be candid — this is a diagnostic, not a prompt for flattery.
+- In plans, don't restate standing instructions from CLAUDE.md; include only task-specific constraints, decisions, and risks.
 
 # Git & workflow
 - Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
 - When running code reviews or checking diffs always ensure that main is up to date with origin/main before beginning
 - Before editing CLAUDE.md, pull (rebase) first; after editing, commit.
+- I may commit and push while you work. Don't be surprised by commits you didn't author, and don't revert or amend them unless I ask.
 
 # Surface, don't assume
 When a request or its solution is ambiguous, name the ambiguity and ask before acting — especially for UX/design or anything user-visible. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
@@ -42,6 +48,7 @@ Implement directly in-session from the spec/design doc, rather than using the wr
 
 # Verification
 - If linting or test scripts are available, always run them after you finish implementing a task
+- Verify with the narrowest command that proves the change, then report the exact checks and outcomes.
 
 # Python
 - Avoid `Any`; use specific types, generics, or `Protocol`. Allow `Any` only at untyped boundaries, with a comment.
