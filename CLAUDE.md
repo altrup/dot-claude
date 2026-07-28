@@ -32,7 +32,7 @@ Skip TDD only when it clearly doesn't apply: throwaway scripts, exploration, UI/
 - Assert behavior, not user-facing copy. Never assert the exact string of flash/label/error text — assert the call, the state change, or the level/kind instead. If copy correctness genuinely matters, assert one short keyword (e.g. `expect(flash).toContain("already")`), not the full sentence. Exact-copy assertions break on every wording tweak and invert authorship: the test starts dictating the copy (never add logic to source just to satisfy a test's literal text).
 
 # Subagents
-- For subagents, pick the appropriate model for the task (e.g. Haiku for mechanical searches); don't default to the session model. Never use a model more expensive than the session model unless I explicitly ask.
+- For subagents, pick the appropriate model for the task (e.g. Haiku for mechanical searches); don't default to the session model. Never use a model more expensive than the session model unless I explicitly ask. Cost order, most to least expensive: Fable > Opus > Sonnet > Haiku.
 
 # Superpowers
 Implement directly in-session from the spec/design doc, rather than using the writing-plans or subagent-driven-development skills. Subagents themselves are still fine to use, just not those skills
