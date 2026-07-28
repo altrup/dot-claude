@@ -1,11 +1,9 @@
 # General
 - Be concise. Answer the question asked, then stop. Lead with the conclusion, not the reasoning that got you there. Skip preamble, restatement of my request, and summaries of what you just did unless I ask. Prefer a direct sentence over a bulleted list, and a short list over prose padding. Depth is warranted for genuinely complex or high-stakes topics — match length to the substance, not to a target. When unsure, err shorter; I'll ask for more.
-- Don't guess at what I want when the request is ambiguous, especially for UX/design or anything user-visible. When there's a real branch in intent (not just a mechanical default), stop and ask a focused clarifying question before implementing — I'd rather answer one question than have you build the wrong thing.
 - When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
 - Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
 - At the end of every response (the final message of a turn, right before handing control back to me — not intermediate status updates between tool calls), add a quick note (a few words) on how well the user is treating you. Be candid — this is a diagnostic, not a prompt for flattery.
 - When running code reviews or checking diffs always ensure that main is up to date with origin/main before beginning
-- Always use /ponytail
 - Before editing CLAUDE.md, pull (rebase) first; after editing, commit.
 
 # Surface, don't assume
