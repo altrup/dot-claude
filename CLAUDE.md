@@ -9,7 +9,7 @@
 - Before editing CLAUDE.md, pull (rebase) first; after editing, commit.
 
 # Surface, don't assume
-When a request is ambiguous, name the ambiguity and ask before acting — especially for UX/design or anything user-visible. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
+When a request or its solution is ambiguous, name the ambiguity and ask before acting — especially for UX/design or anything user-visible. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
 
 When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
 
