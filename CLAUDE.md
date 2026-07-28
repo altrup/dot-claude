@@ -43,7 +43,8 @@ Implement directly in-session from the spec/design doc, rather than using the wr
 # Comments
 - Default to no comment. Add one only to prevent a specific misunderstanding: non-obvious intent, a workaround, or a deliberate choice against the obvious alternative.
 - One line, occasionally two. A paragraph is only justified for genuinely complex logic (subtle algorithm, hard-won invariant, tricky edge case).
-- Never reference issues without a GitHub issue number, or anything outside the codebase without a durable link.
+- Never write a comment that justifies a change to a reviewer — especially when applying review feedback. If it explains why the diff is correct rather than what the next reader needs, it belongs in the PR description, not the code.
+- Never reference issues without a GitHub issue number, or anything outside the codebase without a durable link. Cite as `#123`; ticket codenames (e.g. SANDBOX-1) and track/phase names don't count.
 - Timeless present tense — no "now", "previously", "no longer", and no contrasts with removed alternatives ("no separate X call needed").
 
 # Verification
