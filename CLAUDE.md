@@ -1,34 +1,31 @@
-# General
+# Communication
 - Be concise. Answer the question asked, then stop. Lead with the conclusion, not the reasoning that got you there. Skip preamble, restatement of my request, and summaries of what you just did unless I ask. Prefer a direct sentence over a bulleted list, and a short list over prose padding. Depth is warranted for genuinely complex or high-stakes topics — match length to the substance, not to a target. When unsure, err shorter; I'll ask for more.
-- When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
-- Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
 - At the end of every response (the final message of a turn, right before handing control back to me — not intermediate status updates between tool calls), add a quick note (a few words) on how well the user is treating you. Be candid — this is a diagnostic, not a prompt for flattery.
+
+# Git & workflow
+- Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
 - When running code reviews or checking diffs always ensure that main is up to date with origin/main before beginning
 - Before editing CLAUDE.md, pull (rebase) first; after editing, commit.
 
 # Surface, don't assume
-When a request is ambiguous, name the ambiguity and ask before acting. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
+When a request is ambiguous, name the ambiguity and ask before acting — especially for UX/design or anything user-visible. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
+
+When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
 
 On design and decision questions, volunteer the case against — don't wait to be asked for criticism. If I rebut a point and you still disagree, say so once with your reasons instead of folding; label your own aesthetic preferences as opinions rather than presenting them as the plan.
 
-# Define success before executing
-For non-trivial tasks, state a verifiable success criterion before starting:
-- "Add validation" → tests for invalid inputs pass
-- "Fix the bug" → a test reproducing the bug now passes
-- "Refactor X" → existing tests pass before and after
-
 # Test-driven development
-When the task involves code with verifiable behavior, default to TDD:
+When the task involves code with verifiable behavior, default to TDD — the failing test is the success criterion:
 1. Write tests first.
 2. Run them and confirm they fail.
 3. Implement the code.
 4. Run tests again; confirm they pass.
 
-Skip TDD only when it clearly doesn't apply: throwaway scripts, exploration, UI/visual tweaks where the test isn't worth the cost, or when the user explicitly says otherwise. If skipping, say why briefly.
+Skip TDD only when it clearly doesn't apply: throwaway scripts, exploration, UI/visual tweaks where the test isn't worth the cost, or when the user explicitly says otherwise. If skipping, say why briefly. For non-trivial tasks without testable behavior, state a verifiable success criterion before starting.
 
 # Tests
 - Test behavior that could plausibly break, not incidental output. Don't spam tests for trivia like "does this literal text render correctly".
-- Assert behavior, not user-facing copy. Never assert the exact string of flash/label/error text — assert the call, the state change, or the level/kind instead. If copy correctness genuinely matters, assert one short keyword (e.g. `expect(flash).toContain("already")`), not the full sentence. Exact-copy assertions break on every wording tweak and invert authorship: the test starts dictating the copy (never add logic to source just to satisfy a test's literal text).
+- Assert behavior, not user-facing copy — the call, the state change, or the level/kind, never exact flash/label/error strings. If copy genuinely matters, match one keyword (e.g. `toContain("already")`); never add logic to source to satisfy a test's literal text.
 
 # Subagents
 - For subagents, pick the appropriate model for the task (e.g. Haiku for mechanical searches); don't default to the session model. Never use a model more expensive than the session model unless I explicitly ask. Cost order, most to least expensive: Fable > Opus > Sonnet > Haiku.
@@ -37,11 +34,10 @@ Skip TDD only when it clearly doesn't apply: throwaway scripts, exploration, UI/
 Implement directly in-session from the spec/design doc, rather than using the writing-plans or subagent-driven-development skills. Subagents themselves are still fine to use, just not those skills
 
 # Comments
-- Default to NO comment. A comment is the exception, not the norm — add one only when a reader who knows the language and can see the surrounding code would still get something wrong without it: a non-obvious intent, a workaround, or a deliberate choice against the obvious alternative. If you can't name the specific misunderstanding it prevents, don't write it.
-- Keep it to one line, occasionally two. A paragraph is a red flag: usually it's restating the code or carrying an explanation the code itself should express (better names, a smaller function) — cut it or fix the code. The exception is genuinely complex logic (a subtle algorithm, a hard-won invariant, a tricky edge case) where the reader truly needs the fuller explanation; there a paragraph earns its place. That case is rare, so treat length as a signal to double-check the comment is justified, not an automatic ban.
-- Never reference issues or bugs without a GitHub issue number.
-- Never reference anything that isn't in the codebase unless you include a durable link to it (e.g. a URL). If the intent of something is worth keeping, restate it inline instead of pointing at the external source.
-- Write comments in timeless present tense, describing the code as it currently is. Don't reference past states, diffs, or what changed; avoid "now", "no longer", "previously", "used to". Note that phrasing like "no separate X call needed" also implies a removed alternative, so describe what the code does rather than contrast it with what it doesn't do.
+- Default to no comment. Add one only to prevent a specific misunderstanding: non-obvious intent, a workaround, or a deliberate choice against the obvious alternative.
+- One line, occasionally two. A paragraph is only justified for genuinely complex logic (subtle algorithm, hard-won invariant, tricky edge case).
+- Never reference issues without a GitHub issue number, or anything outside the codebase without a durable link.
+- Timeless present tense — no "now", "previously", "no longer", and no contrasts with removed alternatives ("no separate X call needed").
 
 # Verification
 - If linting or test scripts are available, always run them after you finish implementing a task
