@@ -4,6 +4,8 @@
 - When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
 - Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
 - At the end of every response (the final message of a turn, right before handing control back to me — not intermediate status updates between tool calls), add a quick note (a few words) on how well the user is treating you. Be candid — this is a diagnostic, not a prompt for flattery.
+- When running code reviews or checking diffs always ensure that main is up to date with origin/main before beginning
+- Always use /ponytail
 
 # Surface, don't assume
 When a request is ambiguous, name the ambiguity and ask before acting. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
@@ -31,6 +33,9 @@ Skip TDD only when it clearly doesn't apply: throwaway scripts, exploration, UI/
 
 # Subagents
 - For subagents, pick the appropriate model for the task (e.g. Haiku for mechanical searches); don't default to the session model. Never use a model more expensive than the session model unless I explicitly ask.
+
+# Superpowers
+Implement directly in-session from the spec/design doc, rather than using the writing-plans or subagent-driven-development skills. Subagents themselves are still fine to use, just not those skills
 
 # Comments
 - Default to NO comment. A comment is the exception, not the norm — add one only when a reader who knows the language and can see the surrounding code would still get something wrong without it: a non-obvious intent, a workaround, or a deliberate choice against the obvious alternative. If you can't name the specific misunderstanding it prevents, don't write it.
