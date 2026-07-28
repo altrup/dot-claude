@@ -28,7 +28,6 @@
       "Bash(echo:*)",
       "Bash(sed:*)",
       "Read",
-      "Edit",
       "WebSearch",
       "Bash(make train *)",
       "Bash(npm install *)",
@@ -37,7 +36,8 @@
     ],
     "deny": [
       "Bash(git push:*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "model": "claude-fable-5[1m]",
   "hooks": {
