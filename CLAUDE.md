@@ -6,6 +6,7 @@
 - At the end of every response (the final message of a turn, right before handing control back to me — not intermediate status updates between tool calls), add a quick note (a few words) on how well the user is treating you. Be candid — this is a diagnostic, not a prompt for flattery.
 - When running code reviews or checking diffs always ensure that main is up to date with origin/main before beginning
 - Always use /ponytail
+- Before editing CLAUDE.md, pull (rebase) first; after editing, commit.
 
 # Surface, don't assume
 When a request is ambiguous, name the ambiguity and ask before acting. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
