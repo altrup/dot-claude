@@ -13,7 +13,7 @@
 - Never run `git push`, `git merge`, `git rebase`, `git checkout`/`git switch` (branch changes), or `git reset` without my explicit permission in the current conversation. This includes "safe" operations like fast-forwards of fully-merged branches — moving a branch pointer is my call, not yours. If a branch is stale, say so and ask.
 - Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
 - When running code reviews or checking diffs always ensure that main is up to date with origin/main before beginning
-- Before editing CLAUDE.md, pull (rebase) first; after editing, commit.
+- Before editing CLAUDE.md or other ~/.claude config, pull (rebase) first; after editing, commit and push.
 - I may commit and push while you work. Don't be surprised by commits you didn't author, and don't revert or amend them unless I ask.
 
 # Surface, don't assume
