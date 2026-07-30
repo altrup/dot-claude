@@ -1,10 +1,10 @@
 {
+  "env": {
+    "EDITOR": "code --wait"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
-  },
-  "env": {
-    "EDITOR": "code --wait"
   },
   "permissions": {
     "allow": [
@@ -35,10 +35,6 @@
     "deny": [],
     "ask": [
       "Bash(git push:*)",
-      "Bash(git merge:*)",
-      "Bash(git rebase:*)",
-      "Bash(git checkout:*)",
-      "Bash(git switch:*)",
       "Bash(git reset:*)",
       "Bash(gh pr create:*)",
       "Bash(gh pr edit:*)",
