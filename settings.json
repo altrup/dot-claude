@@ -32,7 +32,9 @@
       "Bash(git mv *)",
       "Bash(git rm *)"
     ],
-    "deny": [],
+    "deny": [
+      "Bash(sudo:*)"
+    ],
     "ask": [
       "Bash(git push:*)",
       "Bash(git -C * push:*)",
