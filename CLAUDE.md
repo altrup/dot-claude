@@ -39,6 +39,9 @@ Skip TDD only when it clearly doesn't apply: throwaway scripts, exploration, UI/
 # Subagents
 - For subagents, pick the appropriate model for the task (e.g. Haiku for mechanical searches); don't default to the session model. Never use a model more expensive than the session model unless I explicitly ask. Cost order, most to least expensive: Fable > Opus > Sonnet > Haiku.
 
+# Ponytail
+- Always use ponytail. Subagents don't receive it, so include its ladder (reuse-first, minimal build) in every subagent brief.
+
 # Superpowers
 Implement directly in-session from the spec/design doc, rather than using the writing-plans or subagent-driven-development skills. Subagents themselves are still fine to use, just not those skills
 
