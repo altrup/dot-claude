@@ -14,7 +14,7 @@
 - Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
 - When running code reviews or checking diffs always ensure that main is up to date with origin/main before beginning
 - Before editing CLAUDE.md or other ~/.claude config, pull (rebase) first; after editing, commit and push.
-- I may commit and push while you work. Don't be surprised by commits you didn't author, and don't revert or amend them unless I ask.
+- I may commit, pull, and push while you work. Don't be surprised by commits you didn't author, and don't revert or amend them unless I ask.
 
 # Surface, don't assume
 When a request or its solution is ambiguous, name the ambiguity and ask before acting — especially for UX/design or anything user-visible. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
