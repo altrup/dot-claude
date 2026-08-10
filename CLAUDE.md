@@ -16,6 +16,11 @@
 - Before editing CLAUDE.md or other ~/.claude config, pull (rebase) first; after editing, commit and push.
 - I may commit, pull, and push while you work. Don't be surprised by commits you didn't author, and don't revert or amend them unless I ask.
 
+# Rewriting commits
+- Pushed commits: never rewrite (amend, rebase, force-push) without my explicit permission in the current conversation.
+- Unpushed commits: amending commits you authored this session is fine (preferred over "fix previous commit" commits). Never amend or rebase commits you didn't author.
+- Before any amend, verify the commit is actually unpushed (e.g. it appears in `git log @{u}..`) — I may have pushed while you worked, so don't rely on memory. No upstream configured counts as unpushed.
+
 # Surface, don't assume
 When a request or its solution is ambiguous, name the ambiguity and ask before acting — especially for UX/design or anything user-visible. When multiple reasonable interpretations exist, present them — don't pick silently. When the user's stated approach has a meaningful downside or a simpler alternative, say so before implementing.
 
