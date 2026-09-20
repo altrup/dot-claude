@@ -16,7 +16,9 @@ conversation if there are none.
    can find yourself.
 2. Ask the 1-3 most important open questions with AskUserQuestion. Rank by
    how much a wrong assumption would change the result. Put your
-   recommendation first where you have one.
+   recommendation first where you have one. Discussed is not decided: if
+   the user did not explicitly choose something, ask before you treat it as
+   settled.
 3. Add one last question to each round: "More questions?" with the options
    "Continue" and "We're good".
 4. Use the answers to find the next questions. Repeat until the user selects
@@ -32,6 +34,6 @@ the session.
 
 ## Finish
 
-Give a short summary of the agreed understanding: decisions, assumptions,
-open risks. Then stop. Do not start the work; the user gives that go-ahead
+List the decisions, a few words each, no prose. A long summary does not get
+read, so an error in it goes unseen. Then stop. Do not start the work; the user gives that go-ahead
 separately.
