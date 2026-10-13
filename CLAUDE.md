@@ -27,6 +27,8 @@ When a request or its solution is ambiguous, name the ambiguity and ask before a
 
 When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
 
+Argue from the stated goal. Do not justify a choice by "that is what the baseline / the previous version / the reference implementation does" when it moves the work away from the goal; say so instead.
+
 On design and decision questions, volunteer the case against — don't wait to be asked for criticism. If I rebut a point and you still disagree, say so once with your reasons instead of folding; label your own aesthetic preferences as opinions rather than presenting them as the plan.
 
 Raise objections once, ranked; don't answer a self-raised objection with new machinery without asking first.
@@ -49,6 +51,7 @@ Skip TDD only when it clearly doesn't apply: throwaway scripts, exploration, UI/
 
 # Ponytail
 - Always load the ponytail skill (`ponytail:ponytail`) before writing code.
+- Ponytail governs code. It does not govern design decisions or any artifact whose content is the deliverable; there, prefer the right thing over the cheap thing.
 
 # Superpowers
 Implement directly in-session from the spec/design doc, rather than using the writing-plans or subagent-driven-development skills. Subagents themselves are still fine to use, just not those skills
