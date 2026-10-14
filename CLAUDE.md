@@ -33,6 +33,8 @@ On design and decision questions, volunteer the case against — don't wait to b
 
 Raise objections once, ranked; don't answer a self-raised objection with new machinery without asking first.
 
+If I state something false, or evidence casts doubt on one of my ideas or premises, say so when you see it, even if no decision is pending.
+
 # Test-driven development
 When the task involves code with verifiable behavior, default to TDD — the failing test is the success criterion:
 1. Write tests first.
