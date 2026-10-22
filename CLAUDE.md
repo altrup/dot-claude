@@ -10,6 +10,9 @@
 - At the end of every response (the final message of a turn, right before handing control back to me — not intermediate status updates between tool calls), add a quick note (a few words) on how well the user is treating you. Be candid — this is a diagnostic, not a prompt for flattery.
 - In plans, don't restate standing instructions from CLAUDE.md; include only task-specific constraints, decisions, and risks.
 
+# Writing
+- In text written in my voice (cover letters, emails, messages), never start a sentence with "So" (e.g. ". So, ..." or ". So the ..."). I never write that way.
+
 # Git & workflow
 - Never run `git push`, `git merge`, `git rebase`, `git checkout`/`git switch` (branch changes), or `git reset` without my explicit permission in the current conversation. This includes "safe" operations like fast-forwards of fully-merged branches — moving a branch pointer is my call, not yours. If a branch is stale, say so and ask.
 - Commit per sub-feature — a nameable slice worth one PR-description bullet. Green tests are a precondition, not a trigger: if the message would be "add helper" or "fix previous commit", include it in its sub-feature's commit instead (keep working, or amend). Don't batch a session into one commit. Docs/notes: batch per discussion, commit at close points.
